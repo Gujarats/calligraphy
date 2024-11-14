@@ -1,27 +1,21 @@
-<a href="#site-main" class="banner__skip">Skip to main content</a>
-
 <div id="site-banner" class="banner">
   <div class="site__container">
     <header class="banner__header" role="banner">
       <div class="banner__brand">
         <a href="/" title="{{ .Site.Params.brand.title }} Home">
-          <span class="banner__name banner__name--long">
-            {{- if .Site.Params.brand.logo }}
-            <img src="{{ .Site.Params.brand.logo }}" alt="{{ .Site.Params.brand.name | default .Site.Title }}" class="brand__logo">
-            {{- else }}
-            {{ .Site.Params.brand.name | default .Site.Title }}
-            {{- end }}
-          </span>
-          {{/*  <span class="banner__banner banner__name--long">{{ .Site.Params.brand.name | default .Site.Title }}</span>  */}}
-          <span class="banner__name banner__name--short">
-            {{- if .Site.Params.brand.logoShort }}
-            <img src="{{ .Site.Params.brand.logoShort }}" alt="{{ .Site.Params.brand.name | default .Site.Title }}" class="brand__logo">
-            {{- else if .Site.Params.brand.nameShort }}
-            {{ .Site.Params.brand.nameShort | default .Site.Title }}
-            {{- else }}
-            {{ $words := split (.Site.Params.brand.name | default .Site.Title) " " }}
-            {{ range $words }}{{ substr . 0 1 }}{{ end }}
-            {{- end }}
+          <span class="banner__img banner__name--long">
+            {{ $thumb := resources.Get "img/logo.png" }}
+            {{ with $thumb }}
+              {{ $thumb := $thumb.Filter (images.Process "resize 180x180 webp q90") }}
+                  <img
+                    src="{{ $thumb.RelPermalink }}"
+                    width="{{ $thumb.Width }}"
+                    height="{{ $thumb.Height }}"
+                    loading="lazy"
+                    alt="loading"
+                  />
+            {{ end }}
+
           </span>
         </a>
         {{- if not .Site.Params.brand.logo }}
