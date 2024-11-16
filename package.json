@@ -1,0 +1,16 @@
+{
+  "name": "Crown Barber",
+  "version": "0.0.1",
+  "description": "Best Barbershop in Town",
+  "main": "index.js",
+  "scripts": {
+    "lint-check": "npx prettier --check ./layouts/",
+    "lint": "npx prettier --write ./layouts/"
+  },
+  "author": "Gujarat Santana",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-go-template": "^0.0.15"
+  }
+}

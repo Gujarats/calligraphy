@@ -8,18 +8,19 @@
 {{- $videoFile := slice "mp4" "webm" }}
 {{- $ext := trim (path.Ext .Destination) "." }}
 
+
 <figure>
   {{- if in $audioFile $ext }}
     {{- if eq $ext "mp3" }}
       {{- $ext = "mpeg" }}
     {{- end }}
     <audio preload="none" controls>
-      <source src="{{ .Destination }}" type="audio/{{ $ext }}">
+      <source src="{{ .Destination }}" type="audio/{{ $ext }}" />
       Your browser does not support the audio element.
     </audio>
   {{- else if in $videoFile $ext }}
     <video preload="metadata" controls>
-      <source src="{{ .Destination }}" type="video/{{ $ext }}">
+      <source src="{{ .Destination }}" type="video/{{ $ext }}" />
       Your browser does not support the video element.
     </video>
   {{- else }}
@@ -37,8 +38,14 @@
       {{- end }}
     {{- end }}
     <a href="{{ $image }}" target="calligraphy-image">
-      <img loading="lazy" src="{{ $thumbnail }}" alt="{{ .Text | default "A Decorative Image" }}">
+      <img
+        loading="lazy"
+        src="{{ $thumbnail }}"
+        alt="{{ .Text | default "A Decorative Image" }}"
+      />
     </a>
   {{- end }}
-  {{ with .Text }}<figcaption class="text-small">{{ . | safeHTML }}</figcaption>{{ end }}
+  {{ with .Text }}
+    <figcaption class="text-small">{{ . | safeHTML }}</figcaption>
+  {{ end }}
 </figure>
