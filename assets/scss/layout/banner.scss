@@ -33,11 +33,9 @@
     position: relative;
     display: flex;
     height: 3rem;
-    background-color: var(--color-canvas-tint);
 
     @media screen and (min-width: 50rem) {
       height: 12rem;
-      background-color: unset;
     }
   }
 
@@ -78,11 +76,11 @@
 
   &__name {
     &--long {
-      @media screen and (max-width: 30rem) {
+      @media screen and (max-width: 50rem) {
         display: none;
       }
 
-      @media screen and (max-width: 50rem) {
+      @media screen and (max-width: 70rem) {
         letter-spacing: 0;
       }
     }
@@ -133,7 +131,6 @@
       list-style: none;
       text-align: right;
       text-transform: uppercase;
-      background-color: var(--color-ui-float);
       transform: translateY(-125%);
       transition: transform var(--transition-base);
 
@@ -143,7 +140,6 @@
         display: flex;
         justify-content: center;
         width: unset;
-        background-color: transparent;
         border-bottom: 1px solid var(--color-ui-float);
         transform: translateY(0%);
       }
