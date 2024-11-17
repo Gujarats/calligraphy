@@ -6,6 +6,8 @@
     flex-direction: column;
     grid-column: span 12;
     
+    
+    
     @include break(54rem) {
         grid-column: span 6;
         
@@ -41,6 +43,8 @@
                 flex-direction: column;
                 justify-content: center;
             }
+
+            
         }
     }
 
@@ -232,4 +236,19 @@
             margin-top: 0;
         }
     }
+    
+  &__content__pricing{
+    flex-direction: column;
+    margin-top: typeScale(-8, up, em);
+    z-index: 50;
+  }
+
+  &__pricing {
+    background-color: hsl(180, 100%, 35%);
+    max-width: 280px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+  }
 }
