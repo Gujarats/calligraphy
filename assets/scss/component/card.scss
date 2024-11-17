@@ -232,19 +232,32 @@
   }
 
   &__content__pricing {
-    display: flex;
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
     justify-content: center;
     margin-top: typeScale(-8, up, em);
     z-index: 50;
     border: 5px solid;
-    padding: 1.2rem;
+    padding: 0.3rem;
   }
 
   &__pricing {
     background-color: hsl(219, 16%, 17%);
-    max-width: 280px;
+    @media screen and (min-width: 320px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      margin-top: 1rem;
+    }
+    @media screen and (min-width: 768px) {
+      width: 200px;
+      margin-left: 1rem;
+    }
+    @media screen and (min-width: 1024px) {
+      width: 280px;
+    }
     display: inline-block;
-    margin-left: 1.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-bottom: 1.8rem;
