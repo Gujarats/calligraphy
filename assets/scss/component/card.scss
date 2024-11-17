@@ -239,15 +239,17 @@
     
   &__content__pricing{
     flex-direction: column;
-    margin-top: typeScale(-8, up, em);
+    margin-top: typeScale(-7, up, em);
     z-index: 50;
   }
 
   &__pricing {
-    background-color: hsl(180, 100%, 35%);
+    background-color:  hsl(219, 16%, 17%) ;
     max-width: 280px;
+    display: inline-block;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    padding-bottom: 1.8rem;
     margin-left: 1.8rem;
     margin-right: 1.8rem;
   }
