@@ -104,13 +104,16 @@
       {{- $image = site.Params.meta.baseOGImage }}
       {{- $image = resources.GetMatch $image }}
     {{- end }}
-    {{- $image = $image.Fit "1200x630" }}
-    {{- $imageTweet := $image.Fit "1024x512" }}
-    <meta name="og:image" content="{{ $image.Permalink }}" />
-    <meta name="twitter:image" content="{{ $imageTweet.Permalink }}" />
-    {{ with .Site.Params.Twitter }}
-      <meta name="twitter:site" content="{{ . }}" />
-    {{ end }}
+    {{- if $image }}
+      {{- $image = $image.Fit "1200x630" }}
+      {{- $imageTweet := $image.Fit "1024x512" }}
+      <meta name="og:image" content="{{ $image.Permalink }}" />
+      <meta name="twitter:image" content="{{ $imageTweet.Permalink }}" />
+      {{ with .Site.Params.Twitter }}
+        <meta name="twitter:site" content="{{ . }}" />
+      {{ end }}
+    {{- end }}
+
     {{ block "head" . }}
       {{ partialCached "site/head-additions.html" . }}
     {{ end }}
@@ -155,12 +158,6 @@
 
     <main id="site-main" class="site__main l-grid" role="main">
       {{ block "main" . }}{{ end }}
-      {{ block "sidebar-left" . }}{{ end }}
-      {{ block "sidebar-right" . }}{{ end }}
-      {{ block "pagination" . }}{{ end }}
     </main>
-
-    {{ block "footer" . }}{{ partialCached "site/footer.html" . }}{{ end }}
-
   </body>
 </html>
