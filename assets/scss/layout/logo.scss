@@ -1,9 +1,17 @@
 .main__logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 100%;
+  margin-bottom: 1rem;
   @media screen and (min-width: 30rem) {
     float: right;
     margin-right: 1rem;
     margin-top: -2.3rem;
     clear: both;
+    width: auto;
+    margin-bottom: 0rem;
   }
 }
 
@@ -14,4 +22,10 @@
   margin-right: auto;
   height: auto;
   width: 100%;
+}
+
+.main__title {
+  @media screen and (mind-width: 20rem) {
+    font-size: 3vw;
+  }
 }
