@@ -1,8 +1,10 @@
 .main__logo {
-  float: right;
-  margin-right: 1rem;
-  margin-top: -3.5rem;
-  clear: both;
+  @media screen and (min-width: 30rem) {
+    float: right;
+    margin-right: 1rem;
+    margin-top: -2.3rem;
+    clear: both;
+  }
 }
 
 .feature__image {

@@ -3,8 +3,7 @@
     class="card card--page{{ if not .Params.feature }}card--coverless{{ end }}"
   >
     <div class="card__content">
-      <h1 class="card__title">{{ .Title }}</h1>
-      <div class="main__logo float-right">
+      <div class="main__logo">
         <a href="/" title="{{ .Site.Params.brand.title }} Home">
           {{ $thumb := resources.Get "img/logo.png" }}
           {{ with $thumb }}
@@ -19,6 +18,8 @@
           {{ end }}
         </a>
       </div>
+      <h1 class="card__title">{{ .Title }}</h1>
+
       {{ partialCached "function/content" . .Page }}
       {{ $thumb := resources.Get "img/barber-cuts.png" }}
       {{ with $thumb }}
