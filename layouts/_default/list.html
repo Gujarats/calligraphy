@@ -1,4 +1,5 @@
 {{- define "main" }}
+  {{ $link := site.Data.button.link }}
   <article
     class="card card--page{{ if not .Params.feature }}card--coverless{{ end }}"
   >
@@ -31,7 +32,6 @@
         />
       {{ end }}
     </div>
-
     <div class="card__content">
       <div class="card__content__pricing">
         <div class="card__pricing">
@@ -43,7 +43,9 @@
             <li>Kualitas Terjamin</li>
             <li>Peralatan lengkap</li>
           </ul>
-          <button class="button_booking">Book</button>
+          <a href="{{ site.Data.button.button.link }}">
+            <button class="button_booking">Book</button>
+          </a>
         </div>
         <div class="card__pricing">
           <h1>Premium</h1>
@@ -54,7 +56,9 @@
             <li>Hemat Waktu</li>
             <li>Hasil Memuaskan</li>
           </ul>
-          <button class="button_booking">Book</button>
+          <a href="{{ site.Data.button.button.link }}">
+            <button class="button_booking">Book</button>
+          </a>
         </div>
       </div>
     </div>
