@@ -138,6 +138,13 @@
     margin: 0;
     line-height: 1;
     word-break: break-word;
+    font-size: 2.352637rem;
+    letter-spacing: -1px;
+    text-align: center;
+    @media screen and (min-width: 30rem) {
+      font-size: 3.352637rem;
+      text-align: left;
+    }
   }
 
   &__subtitle {
