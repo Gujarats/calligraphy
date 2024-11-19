@@ -1,8 +1,8 @@
 .main__logo {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 20;
+  float: right;
+  margin-right: 1rem;
+  margin-top: -3.5rem;
+  clear: both;
 }
 
 .feature__image {
@@ -10,4 +10,6 @@
   justify-items: center;
   margin-left: auto;
   margin-right: auto;
+  height: auto;
+  width: 100%;
 }
