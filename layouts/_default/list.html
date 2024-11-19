@@ -1,11 +1,36 @@
 {{- define "main" }}
+  <div class="main__logo">
+    <a href="/" title="{{ .Site.Params.brand.title }} Home">
+      {{ $thumb := resources.Get "img/logo.png" }}
+      {{ with $thumb }}
+        {{ $thumb := $thumb.Filter (images.Process "resize 300x300 webp q90") }}
+        <img
+          class="main__logo__img"
+          src="{{ $thumb.RelPermalink }}"
+          width="{{ $thumb.Width }}"
+          height="{{ $thumb.Height }}"
+          alt="loading"
+        />
+      {{ end }}
+    </a>
+  </div>
   <article
     class="card card--page{{ if not .Params.feature }}card--coverless{{ end }}"
   >
     <div class="card__content">
       <h1 class="card__title">{{ .Title }}</h1>
       {{ partialCached "function/content" . .Page }}
+      {{ $thumb := resources.Get "img/barber-cuts.png" }}
+      {{ with $thumb }}
+        {{ $thumb := $thumb.Filter (images.Process "resize 380x480 webp q90") }}
+        <img
+          src="{{ $thumb.RelPermalink }}"
+          alt="loading"
+          class="feature__image"
+        />
+      {{ end }}
     </div>
+
     <div class="card__content">
       <div class="card__content__pricing">
         <div class="card__pricing">
@@ -28,4 +53,3 @@
     </div>
   </article>
 {{- end }}
-
