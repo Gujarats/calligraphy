@@ -114,7 +114,7 @@
   &__content {
     position: relative;
     flex-grow: 1;
-    margin: typeScale(-6, up, em) typeScale(1, up, em) 0;
+    margin: typeScale(-6, up, em) 0.5em 0;
     padding: typeScale(2, up, em)
       clamp(#{typeScale(1, up, em)}, 5vw, #{typeScale(4, up, em)});
     background-color: var(--color-canvas-tint);
